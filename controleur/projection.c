@@ -182,20 +182,20 @@ int projectionSystemeCommandes(systemeT * systeme, projectionT * projection, com
 	if((*systeme).moteurs.etatJosephson ==1)
 		{
 		(*commandes).boutonEtat[7]=1; // 284	Marche
-		(*commandes).boutonEtat[9]=1; // 339	Droite
 		}
 	else
 		{
-		if((*systeme).moteurs.etatJosephson ==-1)
-			{
-			(*commandes).boutonEtat[7]=1; // 284	Marche
-			(*commandes).boutonEtat[10]=1; // 367	Gauche
-			}
-		else
-			{
-			(*commandes).boutonEtat[8]=1; // 311	Arrêt
-			}
+		(*commandes).boutonEtat[8]=1; // 311	Arrêt
 		}
+
+	if((*systeme).moteurs.courantJosephson < 0)
+		{
+		(*commandes).boutonEtat[10]=1; // 367	Gauche
+		}
+	else
+		{
+	   	(*commandes).boutonEtat[9]=1; // 339	Droite
+	    }
 
 	switch((*systeme).moteurs.generateur)	//	0:eteint, 1:sinus, 2:carre, 3:impulsion
 		{

@@ -509,7 +509,7 @@ void moteursSensJosephson(moteursT * moteurs, int signe)
 		(*moteurs).courantJosephson=-(*moteurs).courantJosephson;
 		}
 
-	if(signe>1)
+	if(signe>0)
 		{
 		(*moteurs).courantJosephson = (*moteurs).courantJosephson;
 		}
@@ -517,6 +517,7 @@ void moteursSensJosephson(moteursT * moteurs, int signe)
 		{
 		(*moteurs).courantJosephson = - (*moteurs).courantJosephson;
 		}
+
 	return;
 	}
 
