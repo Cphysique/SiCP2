@@ -1,7 +1,7 @@
 /*
-Copyright septembre 2019, Stephan Runigo
+Copyright septembre 2020, Stephan Runigo
 runigo@free.fr
-SiCP 2.4 simulateur de chaîne de pendules
+SiCP 2.4.3 simulateur de chaîne de pendules
 Ce logiciel est un programme informatique servant à simuler l'équation
 d'une chaîne de pendules et à en donner une représentation graphique.
 Ce logiciel est régi par la licence CeCILL soumise au droit français et
@@ -35,12 +35,12 @@ int fichierEcritureParametre(systemeT * systeme, grapheT * graphe, int numero);
 int fichierLectureParametre(systemeT * systeme, grapheT * graphe, int numero);
 int fichierEcriturePosition(systemeT * systeme, int numero);
 int fichierLecturePosition(systemeT * systeme, int numero);
-
+/*
 int fichierFonctionNulle(systemeT * systeme, grapheT * graphe);
 int fichierFonctionTriangle(systemeT * systeme, grapheT * graphe, int numero);
 int fichierFonctionCarre(systemeT * systeme, grapheT * graphe, int numero);
 int fichierFonctionSinus(systemeT * systeme, grapheT * graphe, int numero);
-
+*/
 
 
 int fichierEcriture(systemeT * systeme, grapheT * graphe, int numero)
@@ -70,7 +70,7 @@ int fichierEcritureParametre(systemeT * systeme, grapheT * graphe, int numero)
 
 	switch (numero)
 		{
-		case 0 :
+		case 26 :
 			fichier = fopen("./donnees/enregistrement/parametre_a.sicp", "w");break;
 		case 1 :
 			fichier = fopen("./donnees/enregistrement/parametre_z.sicp", "w");break;
@@ -196,64 +196,127 @@ int fichierLectureParametre(systemeT * systeme, grapheT * graphe, int numero)
 	int entier = 0;
 	(void)graphe;
 
-	switch (numero)
-		{
-		case 0 :
-			fichier = fopen("./donnees/enregistrement/parametre_a.sicp", "r");break;
-		case 1 :
-			fichier = fopen("./donnees/enregistrement/parametre_z.sicp", "r");break;
-		case 2 :
-			fichier = fopen("./donnees/enregistrement/parametre_e.sicp", "r");break;
-		case 3 :
-			fichier = fopen("./donnees/enregistrement/parametre_r.sicp", "r");break;
-		case 4 :
-			fichier = fopen("./donnees/enregistrement/parametre_t.sicp", "r");break;
-		case 5 :
-			fichier = fopen("./donnees/enregistrement/parametre_y.sicp", "r");break;
-		case 6 :
-			fichier = fopen("./donnees/enregistrement/parametre_u.sicp", "r");break;
-		case 7 :
-			fichier = fopen("./donnees/enregistrement/parametre_i.sicp", "r");break;
-		case 8 :
-			fichier = fopen("./donnees/enregistrement/parametre_o.sicp", "r");break;
-		case 9 :
-			fichier = fopen("./donnees/enregistrement/parametre_p.sicp", "r");break;
-		case 10 :
-			fichier = fopen("./donnees/enregistrement/parametre_q.sicp", "r");break;
-		case 11 :
-			fichier = fopen("./donnees/enregistrement/parametre_s.sicp", "r");break;
-		case 12 :
-			fichier = fopen("./donnees/enregistrement/parametre_d.sicp", "r");break;
-		case 13 :
-			fichier = fopen("./donnees/enregistrement/parametre_f.sicp", "r");break;
-		case 14 :
-			fichier = fopen("./donnees/enregistrement/parametre_g.sicp", "r");break;
-		case 15 :
-			fichier = fopen("./donnees/enregistrement/parametre_h.sicp", "r");break;
-		case 16 :
-			fichier = fopen("./donnees/enregistrement/parametre_j.sicp", "r");break;
-		case 17 :
-			fichier = fopen("./donnees/enregistrement/parametre_k.sicp", "r");break;
-		case 18 :
-			fichier = fopen("./donnees/enregistrement/parametre_l.sicp", "r");break;
-		case 19 :
-			fichier = fopen("./donnees/enregistrement/parametre_m.sicp", "r");break;
-		case 20 :
-			fichier = fopen("./donnees/enregistrement/parametre_w.sicp", "r");break;
-		case 21 :
-			fichier = fopen("./donnees/enregistrement/parametre_x.sicp", "r");break;
-		case 22 :
-			fichier = fopen("./donnees/enregistrement/parametre_c.sicp", "r");break;
-		case 23 :
-			fichier = fopen("./donnees/enregistrement/parametre_v.sicp", "r");break;
-		case 24 :
-			fichier = fopen("./donnees/enregistrement/parametre_b.sicp", "r");break;
-		case 25 :
-			fichier = fopen("./donnees/enregistrement/parametre_n.sicp", "r");break;
-		default:
-			;
-		}
-	//fichier = fopen("fluxon.sicp", "r");  /* read */
+    if(numero > 0)
+        {
+		switch (numero)
+			{
+			case 26 :
+				fichier = fopen("./donnees/enregistrement/parametre_a.sicp", "r");break;
+			case 1 :
+				fichier = fopen("./donnees/enregistrement/parametre_z.sicp", "r");break;
+			case 2 :
+				fichier = fopen("./donnees/enregistrement/parametre_e.sicp", "r");break;
+			case 3 :
+				fichier = fopen("./donnees/enregistrement/parametre_r.sicp", "r");break;
+			case 4 :
+				fichier = fopen("./donnees/enregistrement/parametre_t.sicp", "r");break;
+			case 5 :
+				fichier = fopen("./donnees/enregistrement/parametre_y.sicp", "r");break;
+			case 6 :
+				fichier = fopen("./donnees/enregistrement/parametre_u.sicp", "r");break;
+			case 7 :
+				fichier = fopen("./donnees/enregistrement/parametre_i.sicp", "r");break;
+			case 8 :
+				fichier = fopen("./donnees/enregistrement/parametre_o.sicp", "r");break;
+			case 9 :
+				fichier = fopen("./donnees/enregistrement/parametre_p.sicp", "r");break;
+			case 10 :
+				fichier = fopen("./donnees/enregistrement/parametre_q.sicp", "r");break;
+			case 11 :
+				fichier = fopen("./donnees/enregistrement/parametre_s.sicp", "r");break;
+			case 12 :
+				fichier = fopen("./donnees/enregistrement/parametre_d.sicp", "r");break;
+			case 13 :
+				fichier = fopen("./donnees/enregistrement/parametre_f.sicp", "r");break;
+			case 14 :
+				fichier = fopen("./donnees/enregistrement/parametre_g.sicp", "r");break;
+			case 15 :
+				fichier = fopen("./donnees/enregistrement/parametre_h.sicp", "r");break;
+			case 16 :
+				fichier = fopen("./donnees/enregistrement/parametre_j.sicp", "r");break;
+			case 17 :
+				fichier = fopen("./donnees/enregistrement/parametre_k.sicp", "r");break;
+			case 18 :
+				fichier = fopen("./donnees/enregistrement/parametre_l.sicp", "r");break;
+			case 19 :
+				fichier = fopen("./donnees/enregistrement/parametre_m.sicp", "r");break;
+			case 20 :
+				fichier = fopen("./donnees/enregistrement/parametre_w.sicp", "r");break;
+			case 21 :
+				fichier = fopen("./donnees/enregistrement/parametre_x.sicp", "r");break;
+			case 22 :
+				fichier = fopen("./donnees/enregistrement/parametre_c.sicp", "r");break;
+			case 23 :
+				fichier = fopen("./donnees/enregistrement/parametre_v.sicp", "r");break;
+			case 24 :
+				fichier = fopen("./donnees/enregistrement/parametre_b.sicp", "r");break;
+			case 25 :
+				fichier = fopen("./donnees/enregistrement/parametre_n.sicp", "r");break;
+			default:
+				;
+			}
+	    }
+    else
+	    {
+		switch (-numero)
+			{
+			case 26 :
+				fichier = fopen("./donnees/enregistrement/parametre_aa.sicp", "r");break;
+			case 1 :
+				fichier = fopen("./donnees/enregistrement/parametre_zz.sicp", "r");break;
+			case 2 :
+				fichier = fopen("./donnees/enregistrement/parametre_ee.sicp", "r");break;
+			case 3 :
+				fichier = fopen("./donnees/enregistrement/parametre_rr.sicp", "r");break;
+			case 4 :
+				fichier = fopen("./donnees/enregistrement/parametre_tt.sicp", "r");break;
+			case 5 :
+				fichier = fopen("./donnees/enregistrement/parametre_yy.sicp", "r");break;
+			case 6 :
+				fichier = fopen("./donnees/enregistrement/parametre_uu.sicp", "r");break;
+			case 7 :
+				fichier = fopen("./donnees/enregistrement/parametre_ii.sicp", "r");break;
+			case 8 :
+				fichier = fopen("./donnees/enregistrement/parametre_oo.sicp", "r");break;
+			case 9 :
+				fichier = fopen("./donnees/enregistrement/parametre_pp.sicp", "r");break;
+			case 10 :
+				fichier = fopen("./donnees/enregistrement/parametre_qq.sicp", "r");break;
+			case 11 :
+				fichier = fopen("./donnees/enregistrement/parametre_ss.sicp", "r");break;
+			case 12 :
+				fichier = fopen("./donnees/enregistrement/parametre_dd.sicp", "r");break;
+			case 13 :
+				fichier = fopen("./donnees/enregistrement/parametre_ff.sicp", "r");break;
+			case 14 :
+				fichier = fopen("./donnees/enregistrement/parametre_gg.sicp", "r");break;
+			case 15 :
+				fichier = fopen("./donnees/enregistrement/parametre_hh.sicp", "r");break;
+			case 16 :
+				fichier = fopen("./donnees/enregistrement/parametre_jj.sicp", "r");break;
+			case 17 :
+				fichier = fopen("./donnees/enregistrement/parametre_kk.sicp", "r");break;
+			case 18 :
+				fichier = fopen("./donnees/enregistrement/parametre_ll.sicp", "r");break;
+			case 19 :
+				fichier = fopen("./donnees/enregistrement/parametre_mm.sicp", "r");break;
+			case 20 :
+				fichier = fopen("./donnees/enregistrement/parametre_ww.sicp", "r");break;
+			case 21 :
+				fichier = fopen("./donnees/enregistrement/parametre_xx.sicp", "r");break;
+			case 22 :
+				fichier = fopen("./donnees/enregistrement/parametre_cc.sicp", "r");break;
+			case 23 :
+				fichier = fopen("./donnees/enregistrement/parametre_vv.sicp", "r");break;
+			case 24 :
+				fichier = fopen("./donnees/enregistrement/parametre_bb.sicp", "r");break;
+			case 25 :
+				fichier = fopen("./donnees/enregistrement/parametre_nn.sicp", "r");break;
+			default:
+				;
+			}
+	    }
+
 	if(fichier == NULL)
 		{
 		printf("Erreur d'ouverture du fichier de réinitialisation\n");
@@ -323,22 +386,22 @@ int fichierLectureParametre(systemeT * systeme, grapheT * graphe, int numero)
 
 		fclose(fichier);
 
-	fprintf(stderr, "Suppression du système\n");
-	systemeSuppression(systeme);
+        	fprintf(stderr, "Suppression du système\n");
+	    systemeSuppression(systeme);
+    
+	        fprintf(stderr, "Suppression du graphe\n");
+	    grapheSuppression(graphe);
 
-	fprintf(stderr, "Suppression du graphe\n");
-	grapheSuppression(graphe);
+	    	fprintf(stderr, " Création du système\n");
+	    systemeCreation(systeme);
 
-		fprintf(stderr, " Création du système\n");
-	systemeCreation(systeme);
+	    changeFormeDissipation(systeme, (*systeme).modeDissipation);
+	    changeConditionsLimites(systeme, (*systeme).libreFixe);
+	    (*systeme).premier->pendule.dephasage = reel;
+	    //penduleAjouteDephasage(&(*systeme).premier->pendule, (*systeme).moteurs.dephasage);
 
-	changeFormeDissipation(systeme, (*systeme).modeDissipation);
-	changeConditionsLimites(systeme, (*systeme).libreFixe);
-	(*systeme).premier->pendule.dephasage = reel;
-	//penduleAjouteDephasage(&(*systeme).premier->pendule, (*systeme).moteurs.dephasage);
-
-		fprintf(stderr, " Création du graphe\n");
-	grapheCreation(graphe, (*systeme).nombre);
+	    	fprintf(stderr, " Création du graphe\n");
+	    grapheCreation(graphe, (*systeme).nombre);
 
 		}
 
@@ -351,7 +414,7 @@ int fichierEcriturePosition(systemeT * systeme, int numero)
 
 	switch (numero)
 		{
-		case 0 :
+		case 26 :
 			fichier = fopen("./donnees/enregistrement/position_a.sicp", "w");break;
 		case 1 :
 			fichier = fopen("./donnees/enregistrement/position_z.sicp", "w");break;
@@ -428,62 +491,125 @@ int fichierLecturePosition(systemeT * systeme, int numero)
 	{
 	FILE *fichier; /* pointeur sur FILE */
 
-	switch (numero)
-		{
-		case 0 :
-			fichier = fopen("./donnees/enregistrement/position_a.sicp", "r");break;
-		case 1 :
-			fichier = fopen("./donnees/enregistrement/position_z.sicp", "r");break;
-		case 2 :
-			fichier = fopen("./donnees/enregistrement/position_e.sicp", "r");break;
-		case 3 :
-			fichier = fopen("./donnees/enregistrement/position_r.sicp", "r");break;
-		case 4 :
-			fichier = fopen("./donnees/enregistrement/position_t.sicp", "r");break;
-		case 5 :
-			fichier = fopen("./donnees/enregistrement/position_y.sicp", "r");break;
-		case 6 :
-			fichier = fopen("./donnees/enregistrement/position_u.sicp", "r");break;
-		case 7 :
-			fichier = fopen("./donnees/enregistrement/position_i.sicp", "r");break;
-		case 8 :
-			fichier = fopen("./donnees/enregistrement/position_o.sicp", "r");break;
-		case 9 :
-			fichier = fopen("./donnees/enregistrement/position_p.sicp", "r");break;
-		case 10 :
-			fichier = fopen("./donnees/enregistrement/position_q.sicp", "r");break;
-		case 11 :
-			fichier = fopen("./donnees/enregistrement/position_s.sicp", "r");break;
-		case 12 :
-			fichier = fopen("./donnees/enregistrement/position_d.sicp", "r");break;
-		case 13 :
-			fichier = fopen("./donnees/enregistrement/position_f.sicp", "r");break;
-		case 14 :
-			fichier = fopen("./donnees/enregistrement/position_g.sicp", "r");break;
-		case 15 :
-			fichier = fopen("./donnees/enregistrement/position_h.sicp", "r");break;
-		case 16 :
-			fichier = fopen("./donnees/enregistrement/position_j.sicp", "r");break;
-		case 17 :
-			fichier = fopen("./donnees/enregistrement/position_k.sicp", "r");break;
-		case 18 :
-			fichier = fopen("./donnees/enregistrement/position_l.sicp", "r");break;
-		case 19 :
-			fichier = fopen("./donnees/enregistrement/position_m.sicp", "r");break;
-		case 20 :
-			fichier = fopen("./donnees/enregistrement/position_w.sicp", "r");break;
-		case 21 :
-			fichier = fopen("./donnees/enregistrement/position_x.sicp", "r");break;
-		case 22 :
-			fichier = fopen("./donnees/enregistrement/position_c.sicp", "r");break;
-		case 23 :
-			fichier = fopen("./donnees/enregistrement/position_v.sicp", "r");break;
-		case 24 :
-			fichier = fopen("./donnees/enregistrement/position_b.sicp", "r");break;
-		case 25 :
-			fichier = fopen("./donnees/enregistrement/position_n.sicp", "r");break;
-		default:
-			;
+    if(numero > 0)
+        {
+		switch (numero)
+			{
+			case 26 :
+				fichier = fopen("./donnees/enregistrement/position_a.sicp", "r");break;
+			case 1 :
+				fichier = fopen("./donnees/enregistrement/position_z.sicp", "r");break;
+			case 2 :
+				fichier = fopen("./donnees/enregistrement/position_e.sicp", "r");break;
+			case 3 :
+				fichier = fopen("./donnees/enregistrement/position_r.sicp", "r");break;
+			case 4 :
+				fichier = fopen("./donnees/enregistrement/position_t.sicp", "r");break;
+			case 5 :
+				fichier = fopen("./donnees/enregistrement/position_y.sicp", "r");break;
+			case 6 :
+				fichier = fopen("./donnees/enregistrement/position_u.sicp", "r");break;
+			case 7 :
+				fichier = fopen("./donnees/enregistrement/position_i.sicp", "r");break;
+			case 8 :
+				fichier = fopen("./donnees/enregistrement/position_o.sicp", "r");break;
+			case 9 :
+				fichier = fopen("./donnees/enregistrement/position_p.sicp", "r");break;
+			case 10 :
+				fichier = fopen("./donnees/enregistrement/position_q.sicp", "r");break;
+			case 11 :
+				fichier = fopen("./donnees/enregistrement/position_s.sicp", "r");break;
+			case 12 :
+				fichier = fopen("./donnees/enregistrement/position_d.sicp", "r");break;
+			case 13 :
+				fichier = fopen("./donnees/enregistrement/position_f.sicp", "r");break;
+			case 14 :
+				fichier = fopen("./donnees/enregistrement/position_g.sicp", "r");break;
+			case 15 :
+				fichier = fopen("./donnees/enregistrement/position_h.sicp", "r");break;
+			case 16 :
+				fichier = fopen("./donnees/enregistrement/position_j.sicp", "r");break;
+			case 17 :
+				fichier = fopen("./donnees/enregistrement/position_k.sicp", "r");break;
+			case 18 :
+				fichier = fopen("./donnees/enregistrement/position_l.sicp", "r");break;
+			case 19 :
+				fichier = fopen("./donnees/enregistrement/position_m.sicp", "r");break;
+			case 20 :
+				fichier = fopen("./donnees/enregistrement/position_w.sicp", "r");break;
+			case 21 :
+				fichier = fopen("./donnees/enregistrement/position_x.sicp", "r");break;
+			case 22 :
+				fichier = fopen("./donnees/enregistrement/position_c.sicp", "r");break;
+			case 23 :
+				fichier = fopen("./donnees/enregistrement/position_v.sicp", "r");break;
+			case 24 :
+				fichier = fopen("./donnees/enregistrement/position_b.sicp", "r");break;
+			case 25 :
+				fichier = fopen("./donnees/enregistrement/position_n.sicp", "r");break;
+			default:
+				;
+			}
+	    }
+    else
+	    {
+		switch (-numero)
+			{
+			case 26 :
+				fichier = fopen("./donnees/enregistrement/position_aa.sicp", "r");break;
+			case 1 :
+				fichier = fopen("./donnees/enregistrement/position_zz.sicp", "r");break;
+			case 2 :
+				fichier = fopen("./donnees/enregistrement/position_ee.sicp", "r");break;
+			case 3 :
+				fichier = fopen("./donnees/enregistrement/position_rr.sicp", "r");break;
+			case 4 :
+				fichier = fopen("./donnees/enregistrement/position_tt.sicp", "r");break;
+			case 5 :
+				fichier = fopen("./donnees/enregistrement/position_yy.sicp", "r");break;
+			case 6 :
+				fichier = fopen("./donnees/enregistrement/position_uu.sicp", "r");break;
+			case 7 :
+				fichier = fopen("./donnees/enregistrement/position_ii.sicp", "r");break;
+			case 8 :
+				fichier = fopen("./donnees/enregistrement/position_oo.sicp", "r");break;
+			case 9 :
+				fichier = fopen("./donnees/enregistrement/position_pp.sicp", "r");break;
+			case 10 :
+				fichier = fopen("./donnees/enregistrement/position_qq.sicp", "r");break;
+			case 11 :
+				fichier = fopen("./donnees/enregistrement/position_ss.sicp", "r");break;
+			case 12 :
+				fichier = fopen("./donnees/enregistrement/position_dd.sicp", "r");break;
+			case 13 :
+				fichier = fopen("./donnees/enregistrement/position_ff.sicp", "r");break;
+			case 14 :
+				fichier = fopen("./donnees/enregistrement/position_gg.sicp", "r");break;
+			case 15 :
+				fichier = fopen("./donnees/enregistrement/position_hh.sicp", "r");break;
+			case 16 :
+				fichier = fopen("./donnees/enregistrement/position_jj.sicp", "r");break;
+			case 17 :
+				fichier = fopen("./donnees/enregistrement/position_kk.sicp", "r");break;
+			case 18 :
+				fichier = fopen("./donnees/enregistrement/position_ll.sicp", "r");break;
+			case 19 :
+				fichier = fopen("./donnees/enregistrement/position_mm.sicp", "r");break;
+			case 20 :
+				fichier = fopen("./donnees/enregistrement/position_ww.sicp", "r");break;
+			case 21 :
+				fichier = fopen("./donnees/enregistrement/position_xx.sicp", "r");break;
+			case 22 :
+				fichier = fopen("./donnees/enregistrement/position_cc.sicp", "r");break;
+			case 23 :
+				fichier = fopen("./donnees/enregistrement/position_vv.sicp", "r");break;
+			case 24 :
+				fichier = fopen("./donnees/enregistrement/position_bb.sicp", "r");break;
+			case 25 :
+				fichier = fopen("./donnees/enregistrement/position_nn.sicp", "r");break;
+			default:
+				;
+			}
 		}
 
 	if(fichier == NULL)
@@ -509,7 +635,7 @@ int fichierLecturePosition(systemeT * systeme, int numero)
 
 	return 0;
 	}
-
+/*
 int fichierFonction(systemeT * systeme, grapheT * graphe, int numero)
 	{
 	switch (numero)
@@ -594,7 +720,7 @@ int fichierFonctionTriangle(systemeT * systeme, grapheT * graphe, int numero)
 	(void)graphe;
 	(void)numero;
 	fichierFonctionNulle(systeme, graphe);
-/*
+
 	switch (numero)
 		{
 		case 1:
@@ -652,7 +778,7 @@ int fichierFonctionTriangle(systemeT * systeme, grapheT * graphe, int numero)
 				penduleInitialisePosition(&(*systeme).pendule[(*systeme).nombre/64-1-i], ancien, actuel);
 				}break;
 		}
-*/
+
 	return 0;
 	}
 
@@ -662,7 +788,7 @@ int fichierFonctionCarre(systemeT * systeme, grapheT * graphe, int numero)
 	(void)graphe;
 	(void)numero;
 	fichierFonctionNulle(systeme, graphe);
-/*
+
 	if(numero == 1)
 		{
 		printf("Réinitialisation du système, numero = 1\n");
@@ -678,7 +804,7 @@ int fichierFonctionCarre(systemeT * systeme, grapheT * graphe, int numero)
 			penduleInitialisePosition(&(*systeme).pendule[(*systeme).nombre-1-i], ancien, actuel);
 			}
 		}
-*/
+
 	return 0;
 	}
 
@@ -688,7 +814,7 @@ int fichierFonctionSinus(systemeT * systeme, grapheT * graphe, int numero)
 	(void)graphe;
 	(void)numero;
 	fichierFonctionNulle(systeme, graphe);
-/*
+
 	if(numero == 1)
 		{
 		printf("Réinitialisation du système, numero = 1\n");
@@ -704,9 +830,9 @@ int fichierFonctionSinus(systemeT * systeme, grapheT * graphe, int numero)
 			penduleInitialisePosition(&(*systeme).pendule[(*systeme).nombre-1-i], ancien, actuel);
 			}
 		}
-*/
 	return 0;
 	}
+*/
 
 
 ///////////////////////////////////////////////////////////////////////////////////////////////

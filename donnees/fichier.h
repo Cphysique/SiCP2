@@ -39,6 +39,6 @@ termes.
 
 int fichierEcriture(systemeT * systeme, grapheT * graphe, int numero);
 int fichierLecture(systemeT * systeme, grapheT * graphe, int numero);
-int fichierFonction(systemeT * systeme, grapheT * graphe, int numero);
+//int fichierFonction(systemeT * systeme, grapheT * graphe, int numero);
 
 #endif
