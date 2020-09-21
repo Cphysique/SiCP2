@@ -1,7 +1,7 @@
 /*
-Copyright septembre 2019, Stephan Runigo
+Copyright septembre 2020, Stephan Runigo
 runigo@free.fr
-SiCP 2.4 simulateur de chaîne de pendules
+SiCP 2.4.4 simulateur de chaîne de pendules
 Ce logiciel est un programme informatique servant à simuler l'équation
 d'une chaîne de pendules et à en donner une représentation graphique.
 Ce logiciel est régi par la licence CeCILL soumise au droit français et
@@ -53,6 +53,7 @@ int controleurCommandes(controleurT * controleur, int zone);
 int controleurInitialiseParametres(controleurT * controleur, int forme);
 int controleurInitialiseFluxons(controleurT * controleur);
 int controleurInitialiseNulle(controleurT * controleur);
+int controleurInitialiseNombre(controleurT * controleur, int nombre);
 
 int controleurInitialiseParametres(controleurT * controleur, int forme);
 int controleurInitialiseFluxons(controleurT * controleur);
@@ -341,6 +342,32 @@ int controleurInitialiseParametres(controleurT * controleur, int forme)
 		default:
 			controleurInitialiseNulle(controleur);break;
 		}
+	return 0;
+	}
+
+int controleurInitialiseNombre(controleurT * controleur, int nombre)
+	{
+
+	switch(nombre)
+		{
+		case 1:
+			controleurInitialiseNulle(controleur);break;
+		case 2:
+			controleurInitialiseNulle(controleur);
+			moteursChangeGenerateur(&(*controleur).systeme.moteurs, 1);
+			changeFormeDissipation(&(*controleur).systeme, 2);break;
+		case 3:
+			controleurInitialiseFluxons(controleur);
+			changeDissipation(&(*controleur).systeme, 0.33);break;
+		case 4:
+			controleurInitialiseFluxons(controleur);
+			changeFormeDissipation(&(*controleur).systeme, 2);	// Extrémitée absorbante
+			break;
+		default:
+			controleurInitialiseNulle(controleur);break;
+		}
+
+
 	return 0;
 	}
 

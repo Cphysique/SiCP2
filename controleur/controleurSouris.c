@@ -1,7 +1,7 @@
 /*
-Copyright septembre 2019, Stephan Runigo
+Copyright septembre 2020, Stephan Runigo
 runigo@free.fr
-SiCP 2.4 simulateur de chaîne de pendules
+SiCP 2.4.4 simulateur de chaîne de pendules
 Ce logiciel est un programme informatique servant à simuler l'équation
 d'une chaîne de pendules et à en donner une représentation graphique.
 Ce logiciel est régi par la licence CeCILL soumise au droit français et
@@ -29,7 +29,7 @@ pris connaissance de la licence CeCILL, et que vous en avez accepté les
 termes.
 */
 
-#include "controleur.h"
+#include "controleurSouris.h"
 
 int controleurSourisDefilePointDeVue(controleurT * controleur);
 int controleurSourisDefileCommandes(controleurT * controleur, int zone);
@@ -233,13 +233,17 @@ int controleurCommandes(controleurT * controleur, int zone)
 			case 16:
 				systemeInitialisePosition(&(*controleur).systeme, 6);break;
 			case 17:
-				controleurInitialiseParametres(controleur, 1);break;
+			    fichierLecture(&(*controleur).systeme, &(*controleur).graphe, "aaa");break;
+				//controleurInitialiseNombre(controleur, 1);break;
 			case 18:
-				controleurInitialiseParametres(controleur, 2);break;
+			    fichierLecture(&(*controleur).systeme, &(*controleur).graphe, "bbb");break;
+				//controleurInitialiseNombre(controleur, 2);break;
 			case 19:
-				controleurInitialiseParametres(controleur, 3);break;
+			    fichierLecture(&(*controleur).systeme, &(*controleur).graphe, "ccc");break;
+				//controleurInitialiseNombre(controleur, 3);break;
 			case 20:
-				controleurInitialiseParametres(controleur, 4);break;
+			    fichierLecture(&(*controleur).systeme, &(*controleur).graphe, "ddd");break;
+				//controleurInitialiseNombre(controleur, 4);break;
 			default:
 				;
 			}
@@ -330,14 +334,14 @@ int controleurDefileCommandes(controleurT * controleur, int zone)
 	return 0;
 	}
 
-void controleurAfficheSouris(controleurT * controleur)
+int controleurAfficheSouris(controleurT * controleur)
 	{
 	fprintf(stderr, "(*controleur).graphique.fenetreY = %d\n", (*controleur).graphique.fenetreY);
 	fprintf(stderr, "(*controleur).commandes.sourisY = %d\n", (*controleur).commandes.sourisY);
 	fprintf(stderr, "(*controleur).graphique.fenetreX = %d\n", (*controleur).graphique.fenetreX);
 	fprintf(stderr, "(*controleur).commandes.sourisX = %d\n", (*controleur).commandes.sourisX);
 
-	return ;
+	return 0;
 	}
 
 //////////////////////////////////////////////////////////////////////////////////////

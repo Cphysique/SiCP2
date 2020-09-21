@@ -1,7 +1,7 @@
 /*
-Copyright septembre 2020, Stephan Runigo
+Copyright septembre 2019, Stephan Runigo
 runigo@free.fr
-SiCP 2.4.3 simulateur de chaîne de pendules
+SiCP 2.4 simulateur de chaîne de pendules
 Ce logiciel est un programme informatique servant à simuler l'équation
 d'une chaîne de pendules et à en donner une représentation graphique.
 Ce logiciel est régi par la licence CeCILL soumise au droit français et
@@ -178,88 +178,63 @@ int controleurClavier(controleurT * controleur)
 
 int controleurClavierMaj(controleurT * controleur)
 	{
+        //      Réinitialisation du système
+        //          Fichiers utilisateur
+
 	switch ((*controleur).interface.evenement.key.keysym.sym)
 		{
 		case SDLK_a:
-			fprintf(stderr, "Réinitialisation du système\n");
-			fichierLecture(&(*controleur).systeme, &(*controleur).graphe, 26);break;
+			fichierLecture(&(*controleur).systeme, &(*controleur).graphe, "a");break;
 		case SDLK_z:
-			fprintf(stderr, "Réinitialisation du système\n");
-			fichierLecture(&(*controleur).systeme, &(*controleur).graphe, 1);break;
+			fichierLecture(&(*controleur).systeme, &(*controleur).graphe, "z");break;
 		case SDLK_e:
-			fprintf(stderr, "Réinitialisation du système\n");
-			fichierLecture(&(*controleur).systeme, &(*controleur).graphe, 2);break;
+			fichierLecture(&(*controleur).systeme, &(*controleur).graphe, "e");break;
 		case SDLK_r:
-			fprintf(stderr, "Réinitialisation du système\n");
-			fichierLecture(&(*controleur).systeme, &(*controleur).graphe, 3);break;
+			fichierLecture(&(*controleur).systeme, &(*controleur).graphe, "r");break;
 		case SDLK_t:
-			fprintf(stderr, "Réinitialisation du système\n");
-			fichierLecture(&(*controleur).systeme, &(*controleur).graphe, 4);break;
+			fichierLecture(&(*controleur).systeme, &(*controleur).graphe, "t");break;
 		case SDLK_y:
-			fprintf(stderr, "Réinitialisation du système\n");
-			fichierLecture(&(*controleur).systeme, &(*controleur).graphe, 5);break;
+			fichierLecture(&(*controleur).systeme, &(*controleur).graphe, "y");break;
 		case SDLK_u:
-			fprintf(stderr, "Réinitialisation du système\n");
-			fichierLecture(&(*controleur).systeme, &(*controleur).graphe, 6);break;
+			fichierLecture(&(*controleur).systeme, &(*controleur).graphe, "u");break;
 		case SDLK_i:
-			fprintf(stderr, "Réinitialisation du système\n");
-			fichierLecture(&(*controleur).systeme, &(*controleur).graphe, 7);break;
+			fichierLecture(&(*controleur).systeme, &(*controleur).graphe, "i");break;
 		case SDLK_o:
-			fprintf(stderr, "Réinitialisation du système\n");
-			fichierLecture(&(*controleur).systeme, &(*controleur).graphe, 8);break;
+			fichierLecture(&(*controleur).systeme, &(*controleur).graphe, "o");break;
 		case SDLK_p:
-			fprintf(stderr, "Réinitialisation du système\n");
-			fichierLecture(&(*controleur).systeme, &(*controleur).graphe, 9);break;
+			fichierLecture(&(*controleur).systeme, &(*controleur).graphe, "p");break;
 		case SDLK_q:
-			fprintf(stderr, "Réinitialisation du système\n");
-			fichierLecture(&(*controleur).systeme, &(*controleur).graphe, 10);break;
+			fichierLecture(&(*controleur).systeme, &(*controleur).graphe, "q");break;
 		case SDLK_s:
-			fprintf(stderr, "Réinitialisation du système\n");
-			fichierLecture(&(*controleur).systeme, &(*controleur).graphe, 11);break;
+			fichierLecture(&(*controleur).systeme, &(*controleur).graphe, "s");break;
 		case SDLK_d:
-			fprintf(stderr, "Réinitialisation du système\n");
-			fichierLecture(&(*controleur).systeme, &(*controleur).graphe, 12);break;
+			fichierLecture(&(*controleur).systeme, &(*controleur).graphe, "d");break;
 		case SDLK_f:
-			fprintf(stderr, "Réinitialisation du système\n");
-			fichierLecture(&(*controleur).systeme, &(*controleur).graphe, 13);break;
+			fichierLecture(&(*controleur).systeme, &(*controleur).graphe, "f");break;
 		case SDLK_g:
-			fprintf(stderr, "Réinitialisation du système\n");
-			fichierLecture(&(*controleur).systeme, &(*controleur).graphe, 14);break;
+			fichierLecture(&(*controleur).systeme, &(*controleur).graphe, "g");break;
 		case SDLK_h:
-			fprintf(stderr, "Réinitialisation du système\n");
-			fichierLecture(&(*controleur).systeme, &(*controleur).graphe, 15);break;
+			fichierLecture(&(*controleur).systeme, &(*controleur).graphe, "h");break;
 		case SDLK_j:
-			fprintf(stderr, "Réinitialisation du système\n");
-			fichierLecture(&(*controleur).systeme, &(*controleur).graphe, 16);break;
+			fichierLecture(&(*controleur).systeme, &(*controleur).graphe, "j");break;
 		case SDLK_k:
-			fprintf(stderr, "Réinitialisation du système\n");
-			fichierLecture(&(*controleur).systeme, &(*controleur).graphe, 17);break;
+			fichierLecture(&(*controleur).systeme, &(*controleur).graphe, "k");break;
 		case SDLK_l:
-			fprintf(stderr, "Réinitialisation du système\n");
-			fichierLecture(&(*controleur).systeme, &(*controleur).graphe, 18);break;
+			fichierLecture(&(*controleur).systeme, &(*controleur).graphe, "l");break;
 		case SDLK_m:
-			fprintf(stderr, "Réinitialisation du système\n");
-			fichierLecture(&(*controleur).systeme, &(*controleur).graphe, 19);break;
+			fichierLecture(&(*controleur).systeme, &(*controleur).graphe, "m");break;
 		case SDLK_w:
-			fprintf(stderr, "Réinitialisation du système\n");
-			fichierLecture(&(*controleur).systeme, &(*controleur).graphe, 20);break;
+			fichierLecture(&(*controleur).systeme, &(*controleur).graphe, "w");break;
 		case SDLK_x:
-			fprintf(stderr, "Réinitialisation du système\n");
-			fichierLecture(&(*controleur).systeme, &(*controleur).graphe, 21);break;
+			fichierLecture(&(*controleur).systeme, &(*controleur).graphe, "x");break;
 		case SDLK_c:
-			fprintf(stderr, "Réinitialisation du système\n");
-			fichierLecture(&(*controleur).systeme, &(*controleur).graphe, 22);break;
+			fichierLecture(&(*controleur).systeme, &(*controleur).graphe, "c");break;
 		case SDLK_v:
-			fprintf(stderr, "Réinitialisation du système\n");
-			fichierLecture(&(*controleur).systeme, &(*controleur).graphe, 23);break;
+			fichierLecture(&(*controleur).systeme, &(*controleur).graphe, "v");break;
 		case SDLK_b:
-			fprintf(stderr, "Réinitialisation du système\n");
-			fichierLecture(&(*controleur).systeme, &(*controleur).graphe, 24);break;
+			fichierLecture(&(*controleur).systeme, &(*controleur).graphe, "b");break;
 		case SDLK_n:
-			fprintf(stderr, "Réinitialisation du système\n");
-			fichierLecture(&(*controleur).systeme, &(*controleur).graphe, 25);break;
-
-
+			fichierLecture(&(*controleur).systeme, &(*controleur).graphe, "n");break;
 		default:
 			;
 		}
@@ -268,175 +243,243 @@ int controleurClavierMaj(controleurT * controleur)
 
 int controleurClavierCtrl(controleurT * controleur)
 	{
+        //      Réinitialisation du système 
+        //          Fichiers original
+
 	switch ((*controleur).interface.evenement.key.keysym.sym)
 		{
 		case SDLK_a:
-			fprintf(stderr, "Réinitialisation du système\n");
-			fichierLecture(&(*controleur).systeme, &(*controleur).graphe, -26);break;
+			fichierLecture(&(*controleur).systeme, &(*controleur).graphe, "aa");break;
 		case SDLK_z:
-			fprintf(stderr, "Réinitialisation du système\n");
-			fichierLecture(&(*controleur).systeme, &(*controleur).graphe, -1);break;
+			fichierLecture(&(*controleur).systeme, &(*controleur).graphe, "zz");break;
 		case SDLK_e:
-			fprintf(stderr, "Réinitialisation du système\n");
-			fichierLecture(&(*controleur).systeme, &(*controleur).graphe, -2);break;
+			fichierLecture(&(*controleur).systeme, &(*controleur).graphe, "ee");break;
 		case SDLK_r:
-			fprintf(stderr, "Réinitialisation du système\n");
-			fichierLecture(&(*controleur).systeme, &(*controleur).graphe, -3);break;
+			fichierLecture(&(*controleur).systeme, &(*controleur).graphe, "rr");break;
 		case SDLK_t:
-			fprintf(stderr, "Réinitialisation du système\n");
-			fichierLecture(&(*controleur).systeme, &(*controleur).graphe, -4);break;
+			fichierLecture(&(*controleur).systeme, &(*controleur).graphe, "tt");break;
 		case SDLK_y:
-			fprintf(stderr, "Réinitialisation du système\n");
-			fichierLecture(&(*controleur).systeme, &(*controleur).graphe, -5);break;
+			fichierLecture(&(*controleur).systeme, &(*controleur).graphe, "yy");break;
 		case SDLK_u:
-			fprintf(stderr, "Réinitialisation du système\n");
-			fichierLecture(&(*controleur).systeme, &(*controleur).graphe, -6);break;
+			fichierLecture(&(*controleur).systeme, &(*controleur).graphe, "uu");break;
 		case SDLK_i:
-			fprintf(stderr, "Réinitialisation du système\n");
-			fichierLecture(&(*controleur).systeme, &(*controleur).graphe, -7);break;
+			fichierLecture(&(*controleur).systeme, &(*controleur).graphe, "ii");break;
 		case SDLK_o:
-			fprintf(stderr, "Réinitialisation du système\n");
-			fichierLecture(&(*controleur).systeme, &(*controleur).graphe, -8);break;
+			fichierLecture(&(*controleur).systeme, &(*controleur).graphe, "oo");break;
 		case SDLK_p:
-			fprintf(stderr, "Réinitialisation du système\n");
-			fichierLecture(&(*controleur).systeme, &(*controleur).graphe, -9);break;
+			fichierLecture(&(*controleur).systeme, &(*controleur).graphe, "pp");break;
 		case SDLK_q:
-			fprintf(stderr, "Réinitialisation du système\n");
-			fichierLecture(&(*controleur).systeme, &(*controleur).graphe, -10);break;
+			fichierLecture(&(*controleur).systeme, &(*controleur).graphe, "qq");break;
 		case SDLK_s:
-			fprintf(stderr, "Réinitialisation du système\n");
-			fichierLecture(&(*controleur).systeme, &(*controleur).graphe, -11);break;
+			fichierLecture(&(*controleur).systeme, &(*controleur).graphe, "ss");break;
 		case SDLK_d:
-			fprintf(stderr, "Réinitialisation du système\n");
-			fichierLecture(&(*controleur).systeme, &(*controleur).graphe, -12);break;
+			fichierLecture(&(*controleur).systeme, &(*controleur).graphe, "dd");break;
 		case SDLK_f:
-			fprintf(stderr, "Réinitialisation du système\n");
-			fichierLecture(&(*controleur).systeme, &(*controleur).graphe, -13);break;
+			fichierLecture(&(*controleur).systeme, &(*controleur).graphe, "ff");break;
 		case SDLK_g:
-			fprintf(stderr, "Réinitialisation du système\n");
-			fichierLecture(&(*controleur).systeme, &(*controleur).graphe, -14);break;
+			fichierLecture(&(*controleur).systeme, &(*controleur).graphe, "gg");break;
 		case SDLK_h:
-			fprintf(stderr, "Réinitialisation du système\n");
-			fichierLecture(&(*controleur).systeme, &(*controleur).graphe, -15);break;
+			fichierLecture(&(*controleur).systeme, &(*controleur).graphe, "hh");break;
 		case SDLK_j:
-			fprintf(stderr, "Réinitialisation du système\n");
-			fichierLecture(&(*controleur).systeme, &(*controleur).graphe, -16);break;
+			fichierLecture(&(*controleur).systeme, &(*controleur).graphe, "jj");break;
 		case SDLK_k:
-			fprintf(stderr, "Réinitialisation du système\n");
-			fichierLecture(&(*controleur).systeme, &(*controleur).graphe, -17);break;
+			fichierLecture(&(*controleur).systeme, &(*controleur).graphe, "kk");break;
 		case SDLK_l:
-			fprintf(stderr, "Réinitialisation du système\n");
-			fichierLecture(&(*controleur).systeme, &(*controleur).graphe, -18);break;
+			fichierLecture(&(*controleur).systeme, &(*controleur).graphe, "ll");break;
 		case SDLK_m:
-			fprintf(stderr, "Réinitialisation du système\n");
-			fichierLecture(&(*controleur).systeme, &(*controleur).graphe, -19);break;
+			fichierLecture(&(*controleur).systeme, &(*controleur).graphe, "mm");break;
 		case SDLK_w:
-			fprintf(stderr, "Réinitialisation du système\n");
-			fichierLecture(&(*controleur).systeme, &(*controleur).graphe, -20);break;
+			fichierLecture(&(*controleur).systeme, &(*controleur).graphe, "ww");break;
 		case SDLK_x:
-			fprintf(stderr, "Réinitialisation du système\n");
-			fichierLecture(&(*controleur).systeme, &(*controleur).graphe, -21);break;
+			fichierLecture(&(*controleur).systeme, &(*controleur).graphe, "xx");break;
 		case SDLK_c:
-			fprintf(stderr, "Réinitialisation du système\n");
-			fichierLecture(&(*controleur).systeme, &(*controleur).graphe, -22);break;
+			fichierLecture(&(*controleur).systeme, &(*controleur).graphe, "cc");break;
 		case SDLK_v:
-			fprintf(stderr, "Réinitialisation du système\n");
-			fichierLecture(&(*controleur).systeme, &(*controleur).graphe, -23);break;
+			fichierLecture(&(*controleur).systeme, &(*controleur).graphe, "vv");break;
 		case SDLK_b:
-			fprintf(stderr, "Réinitialisation du système\n");
-			fichierLecture(&(*controleur).systeme, &(*controleur).graphe, -24);break;
+			fichierLecture(&(*controleur).systeme, &(*controleur).graphe, "bb");break;
 		case SDLK_n:
-			fprintf(stderr, "Réinitialisation du système\n");
-			fichierLecture(&(*controleur).systeme, &(*controleur).graphe, -25);break;
+			fichierLecture(&(*controleur).systeme, &(*controleur).graphe, "nn");break;
 		default:
 			;
 		}
 	return (*controleur).sortie;
 	}
+/*
+int controleurClavierCtrl(controleurT * controleur)
+	{
+	switch ((*controleur).interface.evenement.key.keysym.sym)
+		{
+            	// Réinitialisation du système
 
+		case SDLK_a:
+			fprintf(stderr, "Réinitialisation du système\n");
+			systemeInitialisePosition(&(*controleur).systeme, 0);break;
+		case SDLK_z:
+			fprintf(stderr, "Réinitialisation du système\n");
+			systemeInitialisePosition(&(*controleur).systeme, 1);break;
+		case SDLK_e:
+			fprintf(stderr, "Réinitialisation du système\n");
+			fichierFonction(&(*controleur).systeme, &(*controleur).graphe, 2);break;
+		case SDLK_r:
+			fprintf(stderr, "Réinitialisation du système\n");
+			fichierFonction(&(*controleur).systeme, &(*controleur).graphe, 3);break;
+		case SDLK_t:
+			fprintf(stderr, "Réinitialisation du système\n");
+			fichierFonction(&(*controleur).systeme, &(*controleur).graphe, 4);break;
+		case SDLK_y:
+			fprintf(stderr, "Réinitialisation du système\n");
+			fichierFonction(&(*controleur).systeme, &(*controleur).graphe, 5);break;
+		case SDLK_u:
+			fprintf(stderr, "Réinitialisation du système\n");
+			fichierFonction(&(*controleur).systeme, &(*controleur).graphe, 6);break;
+		case SDLK_i:
+			fprintf(stderr, "Réinitialisation du système\n");
+			fichierFonction(&(*controleur).systeme, &(*controleur).graphe, 7);break;
+		case SDLK_o:
+			fprintf(stderr, "Réinitialisation du système\n");
+			fichierFonction(&(*controleur).systeme, &(*controleur).graphe, 8);break;
+		case SDLK_p:
+			fprintf(stderr, "Réinitialisation du système\n");
+			fichierFonction(&(*controleur).systeme, &(*controleur).graphe, 9);break;
+		case SDLK_q:
+			fprintf(stderr, "Sauvegarde du système\n");
+			fichierFonction(&(*controleur).systeme, &(*controleur).graphe, 10);break;
+		case SDLK_s:
+			fprintf(stderr, "Sauvegarde du système\n");
+			fichierFonction(&(*controleur).systeme, &(*controleur).graphe, 11);break;
+		case SDLK_d:
+			fprintf(stderr, "Sauvegarde du système\n");
+			fichierFonction(&(*controleur).systeme, &(*controleur).graphe, 12);break;
+		case SDLK_f:
+			fprintf(stderr, "Sauvegarde du système\n");
+			fichierFonction(&(*controleur).systeme, &(*controleur).graphe, 13);break;
+		case SDLK_g:
+			fprintf(stderr, "Sauvegarde du système\n");
+			fichierFonction(&(*controleur).systeme, &(*controleur).graphe, 14);break;
+		case SDLK_h:
+			fprintf(stderr, "Sauvegarde du système\n");
+			fichierFonction(&(*controleur).systeme, &(*controleur).graphe, 15);break;
+		case SDLK_j:
+			fprintf(stderr, "Sauvegarde du système\n");
+			fichierFonction(&(*controleur).systeme, &(*controleur).graphe, 16);break;
+		case SDLK_k:
+			fprintf(stderr, "Sauvegarde du système\n");
+			fichierFonction(&(*controleur).systeme, &(*controleur).graphe, 17);break;
+		case SDLK_l:
+			fprintf(stderr, "Sauvegarde du système\n");
+			fichierFonction(&(*controleur).systeme, &(*controleur).graphe, 18);break;
+		case SDLK_m:
+			fprintf(stderr, "Sauvegarde du système\n");
+			fichierFonction(&(*controleur).systeme, &(*controleur).graphe, 19);break;
+		case SDLK_w:
+			fprintf(stderr, "Sauvegarde du système\n");
+			fichierFonction(&(*controleur).systeme, &(*controleur).graphe, 20);break;
+		case SDLK_x:
+			fprintf(stderr, "Sauvegarde du système\n");
+			fichierFonction(&(*controleur).systeme, &(*controleur).graphe, 21);break;
+		case SDLK_c:
+			fprintf(stderr, "Sauvegarde du système\n");
+			fichierFonction(&(*controleur).systeme, &(*controleur).graphe, 22);break;
+		case SDLK_v:
+			fprintf(stderr, "Sauvegarde du système\n");
+			fichierFonction(&(*controleur).systeme, &(*controleur).graphe, 23);break;
+		case SDLK_b:
+			fprintf(stderr, "Sauvegarde du système\n");
+			fichierFonction(&(*controleur).systeme, &(*controleur).graphe, 24);break;
+		case SDLK_n:
+			fprintf(stderr, "Sauvegarde du système\n");
+			fichierFonction(&(*controleur).systeme, &(*controleur).graphe, 25);break;
+		default:
+			;
+		}
+	return (*controleur).sortie;
+	}
+*/
 int controleurClavierCtrlMaj(controleurT * controleur)
 	{
 	switch ((*controleur).interface.evenement.key.keysym.sym)
 		{
-		// Ecriture des fichiers
+		    // Sauvegarde du système
+
 		case SDLK_a:
 			fprintf(stderr, "Sauvegarde du système\n");
-			fichierEcriture(&(*controleur).systeme, &(*controleur).graphe, 26);break;
+			fichierEcriture(&(*controleur).systeme, &(*controleur).graphe, "a");break;
 		case SDLK_z:
 			fprintf(stderr, "Sauvegarde du système\n");
-			fichierEcriture(&(*controleur).systeme, &(*controleur).graphe, 1);break;
+			fichierEcriture(&(*controleur).systeme, &(*controleur).graphe, "z");break;
 		case SDLK_e:
 			fprintf(stderr, "Sauvegarde du système\n");
-			fichierEcriture(&(*controleur).systeme, &(*controleur).graphe, 2);break;
+			fichierEcriture(&(*controleur).systeme, &(*controleur).graphe, "e");break;
 		case SDLK_r:
 			fprintf(stderr, "Sauvegarde du système\n");
-			fichierEcriture(&(*controleur).systeme, &(*controleur).graphe, 3);break;
+			fichierEcriture(&(*controleur).systeme, &(*controleur).graphe, "r");break;
 		case SDLK_t:
 			fprintf(stderr, "Sauvegarde du système\n");
-			fichierEcriture(&(*controleur).systeme, &(*controleur).graphe, 4);break;
+			fichierEcriture(&(*controleur).systeme, &(*controleur).graphe, "t");break;
 		case SDLK_y:
 			fprintf(stderr, "Sauvegarde du système\n");
-			fichierEcriture(&(*controleur).systeme, &(*controleur).graphe, 5);break;
+			fichierEcriture(&(*controleur).systeme, &(*controleur).graphe, "y");break;
 		case SDLK_u:
 			fprintf(stderr, "Sauvegarde du système\n");
-			fichierEcriture(&(*controleur).systeme, &(*controleur).graphe, 6);break;
+			fichierEcriture(&(*controleur).systeme, &(*controleur).graphe, "u");break;
 		case SDLK_i:
 			fprintf(stderr, "Sauvegarde du système\n");
-			fichierEcriture(&(*controleur).systeme, &(*controleur).graphe, 7);break;
+			fichierEcriture(&(*controleur).systeme, &(*controleur).graphe, "i");break;
 		case SDLK_o:
 			fprintf(stderr, "Sauvegarde du système\n");
-			fichierEcriture(&(*controleur).systeme, &(*controleur).graphe, 8);break;
+			fichierEcriture(&(*controleur).systeme, &(*controleur).graphe, "o");break;
 		case SDLK_p:
 			fprintf(stderr, "Sauvegarde du système\n");
-			fichierEcriture(&(*controleur).systeme, &(*controleur).graphe, 9);break;
+			fichierEcriture(&(*controleur).systeme, &(*controleur).graphe, "p");break;
 		case SDLK_q:
 			fprintf(stderr, "Sauvegarde du système\n");
-			fichierEcriture(&(*controleur).systeme, &(*controleur).graphe, 10);break;
+			fichierEcriture(&(*controleur).systeme, &(*controleur).graphe, "q");break;
 		case SDLK_s:
 			fprintf(stderr, "Sauvegarde du système\n");
-			fichierEcriture(&(*controleur).systeme, &(*controleur).graphe, 11);break;
+			fichierEcriture(&(*controleur).systeme, &(*controleur).graphe, "s");break;
 		case SDLK_d:
 			fprintf(stderr, "Sauvegarde du système\n");
-			fichierEcriture(&(*controleur).systeme, &(*controleur).graphe, 12);break;
+			fichierEcriture(&(*controleur).systeme, &(*controleur).graphe, "d");break;
 		case SDLK_f:
 			fprintf(stderr, "Sauvegarde du système\n");
-			fichierEcriture(&(*controleur).systeme, &(*controleur).graphe, 13);break;
+			fichierEcriture(&(*controleur).systeme, &(*controleur).graphe, "f");break;
 		case SDLK_g:
 			fprintf(stderr, "Sauvegarde du système\n");
-			fichierEcriture(&(*controleur).systeme, &(*controleur).graphe, 14);break;
+			fichierEcriture(&(*controleur).systeme, &(*controleur).graphe, "g");break;
 		case SDLK_h:
 			fprintf(stderr, "Sauvegarde du système\n");
-			fichierEcriture(&(*controleur).systeme, &(*controleur).graphe, 15);break;
+			fichierEcriture(&(*controleur).systeme, &(*controleur).graphe, "h");break;
 		case SDLK_j:
 			fprintf(stderr, "Sauvegarde du système\n");
-			fichierEcriture(&(*controleur).systeme, &(*controleur).graphe, 16);break;
+			fichierEcriture(&(*controleur).systeme, &(*controleur).graphe, "j");break;
 		case SDLK_k:
 			fprintf(stderr, "Sauvegarde du système\n");
-			fichierEcriture(&(*controleur).systeme, &(*controleur).graphe, 17);break;
+			fichierEcriture(&(*controleur).systeme, &(*controleur).graphe, "k");break;
 		case SDLK_l:
 			fprintf(stderr, "Sauvegarde du système\n");
-			fichierEcriture(&(*controleur).systeme, &(*controleur).graphe, 18);break;
+			fichierEcriture(&(*controleur).systeme, &(*controleur).graphe, "l");break;
 		case SDLK_m:
 			fprintf(stderr, "Sauvegarde du système\n");
-			fichierEcriture(&(*controleur).systeme, &(*controleur).graphe, 19);break;
+			fichierEcriture(&(*controleur).systeme, &(*controleur).graphe, "m");break;
 		case SDLK_w:
 			fprintf(stderr, "Sauvegarde du système\n");
-			fichierEcriture(&(*controleur).systeme, &(*controleur).graphe, 20);break;
+			fichierEcriture(&(*controleur).systeme, &(*controleur).graphe, "w");break;
 		case SDLK_x:
 			fprintf(stderr, "Sauvegarde du système\n");
-			fichierEcriture(&(*controleur).systeme, &(*controleur).graphe, 21);break;
+			fichierEcriture(&(*controleur).systeme, &(*controleur).graphe, "x");break;
 		case SDLK_c:
 			fprintf(stderr, "Sauvegarde du système\n");
-			fichierEcriture(&(*controleur).systeme, &(*controleur).graphe, 22);break;
+			fichierEcriture(&(*controleur).systeme, &(*controleur).graphe, "c");break;
 		case SDLK_v:
 			fprintf(stderr, "Sauvegarde du système\n");
-			fichierEcriture(&(*controleur).systeme, &(*controleur).graphe, 23);break;
+			fichierEcriture(&(*controleur).systeme, &(*controleur).graphe, "v");break;
 		case SDLK_b:
 			fprintf(stderr, "Sauvegarde du système\n");
-			fichierEcriture(&(*controleur).systeme, &(*controleur).graphe, 24);break;
+			fichierEcriture(&(*controleur).systeme, &(*controleur).graphe, "b");break;
 		case SDLK_n:
 			fprintf(stderr, "Sauvegarde du système\n");
-			fichierEcriture(&(*controleur).systeme, &(*controleur).graphe, 25);break;
+			fichierEcriture(&(*controleur).systeme, &(*controleur).graphe, "n");break;
 		default:
 			;
 		}
